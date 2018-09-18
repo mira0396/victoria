@@ -24,52 +24,115 @@
     </div>
 
     <div class="menusorter">
-        <button id="alle">Alle</button>
-        <button id="forretter">Forretter</button>
-        <button id="hovedretter">Hovedretter</button>
-        <button id="dessert">Dessert</button>
-        <button id="drikkevare">Drikkevare</button>
-    </div>
+        <button class="menu-item" data-kategori="alle">Alle</button>
+        <button class="menu-item" data-kategori="forretter">Foretter</button>
+        <button class="menu-item" data-kategori="hovedretter">Hovedretter</button>
+        <button class="menu-item" data-kategori="dessert">Dessert</button>
+        <button class="menu-item" data-kategori="drikkevare">Drikkevare</button>
 
+    </div>
 
 
     <div id="retter">
         <h2>Forretter</h2>
-        <div class="ret1"><img src="billeder/delele.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/dish3.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/chibwawa.jpg" alt="madret"></div>
+        <div class="ret1"><img src="billeder/delele.jpg" alt="madret">forretter</div>
+        <div class="ret1"><img src="billeder/dish3.jpg" alt="madret">forretter</div>
+        <div class="ret1"><img src="billeder/chibwawa.jpg" alt="madret">foretter</div>
     </div>
 
 
     <div id="retter">
         <h2>Hovedretter</h2>
-        <div class="ret1"><img src="billeder/vegan.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/nshimaspinachmeat.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/nshimakapentarape.jpg" alt="madret"></div>
+        <div class="ret1"><img src="billeder/vegan.jpg" alt="madret">hovedretter</div>
+        <div class="ret1"><img src="billeder/nshimaspinachmeat.jpg" alt="madret">hovedretter</div>
+        <div class="ret1"><img src="billeder/nshimakapentarape.jpg" alt="madret">hovedretter</div>
     </div>
 
 
     <div id="retter">
         <h2>Dessert</h2>
-        <div class="ret1"><img src="billeder/tumbua.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/custard.jpg" alt="madret"></div>
-        <div class="ret1"><img src="billeder/ice.JPG" alt="madret"></div>
+        <div class="ret1"><img src="billeder/tumbua.jpg" alt="madret">derssert</div>
+        <div class="ret1"><img src="billeder/custard.jpg" alt="madret">dessert</div>
+        <div class="ret1"><img src="billeder/ice.JPG" alt="madret">dessert</div>
     </div>
 
     <div id="retter">
         <h2>Drikkevare</h2>
-        <div class="ret1"><img src="billeder/cola.png" alt="cola"></div>
-        <div class="ret1"><img src="billeder/fanta.png" alt="fanta"></div>
-        <div class="ret1"><img src="billeder/sprite.png" alt="sprite"></div>
+        <div class="ret1"><img src="billeder/cola.png" alt="cola">drikkevare</div>
+        <div class="ret1"><img src="billeder/fanta.png" alt="fanta">drikkevare</div>
+        <div class="ret1"><img src="billeder/sprite.png" alt="sprite">drikkevare</div>
     </div>
 
-<footer><h4>Adresse: Zambiavej 93, Lusaka
+    <footer>
+        <h4>Adresse: Zambiavej 93, Lusaka
             <br>Telefon: 12345678
             <br> Email: Victoria@zambia.com
             <br>Åbningstider: <br>Søndag-Torsdag 16-22
-            <br>Fredag-Lørdag 16-23</h4></footer>
-    <script>
+            <br>Fredag-Lørdag 16-23</h4>
+    </footer>
 
+
+    <script>
+        let dest = document.querySelector(".retContainer"),
+            retter, menuFilter = "alle";
+        document.addEventListener("DOMContentLoaded", hentJson);
+        async function hentJson() {
+            let jsonData = await fetch("retter.json");
+            retter = await jsonData.json();
+            visRetter();
+        }
+        document.querySelectorAll(".menu-item").forEach(knap => {
+            knap.addEventListener("click", filtrering)
+        });
+
+        function filtrering() {
+            dest.textContent = "";
+            menuFilter = this.getAttribute("data-kategori");
+            visRetter();
+        }
+
+        function visRetter() {
+            let temp = document.querySelector(".retTemplate");
+            let dest = document.querySelector(".retContainer");
+
+            retter.forEach(ret => {
+                if (ret.kategori == menuFilter || menuFilter == "alle") {
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector("[data-titel]").textContent = ret.navn;
+                    klon.querySelector("[data-billede]").src = "billeder/" + ret.billede + ".jpg / .png";
+                    klon.querySelector("[data-billede]").addEventListener("click", () => {
+                        visModal(retten);
+                    })
+                    klon.querySelector("[data-beskrivelse]").textContent = ret.kortbeskrivelse;
+                    klon.querySelector("[data-pris]").textContent = ret.pris;
+                    dest.appendChild(klon);
+                }
+            });
+        }
+
+        function visModal(retten) {
+            modal.classList.add("vis");
+            modal.querySelector(".modal-navn").textContent = retten.navn;
+            modal.querySelector(".modal-billede").src = "billeder/" + retten.billede + ".jpg / .png";
+            modal.querySelector(".modal-navn").alt = "Photo af" + retten.navn;
+            modal.querySelector(".langBeskrivelse").textContent = retten.langbeskrivelse;
+            modal.querySelector(".oprindelsesregion").textContent = retten.oprindelsesregion;
+            modal.querySelector("button").addEventListener("click", skjulmodal);
+
+        }
+
+        function skjulmodal() {
+            modal.classList.remove("vis");
+            //window.scrollTo(0)
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
 
     </script>
 </body>

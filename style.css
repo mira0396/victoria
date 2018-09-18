@@ -148,9 +148,7 @@ h4 {
 
 }
 
-footer {
-    background-color:
-}
+
 #retter {
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +164,7 @@ footer {
 
 
 button {
-    background-color: saddlebrown;
+    background-color: #8B4513;
     color: white;
     padding: 10px 15px;
     font-size: 20px;
