@@ -98,6 +98,13 @@ border-radius: 70%;
 
 }
 
+p {
+    font-size: 2vw;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+
+}
 
 h1 {
     font-size: 3vw;

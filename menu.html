@@ -25,7 +25,7 @@
 
     <div class="menusorter">
         <button class="menu-item" data-kategori="alle">Alle</button>
-        <button class="menu-item" data-kategori="forretter">Foretter</button>
+        <button class="menu-item" data-kategori="forretter">Forretter</button>
         <button class="menu-item" data-kategori="hovedretter">Hovedretter</button>
         <button class="menu-item" data-kategori="dessert">Dessert</button>
         <button class="menu-item" data-kategori="drikkevare">Drikkevare</button>
@@ -38,6 +38,7 @@
     <div id="ret">
         <img src="" alt="">
         <p></p>
+        <h5>pris: <span class="pris" data-pris></span> € </h5>
     </div>
 </template>
 
@@ -87,11 +88,10 @@
 
         function visModal(retten) {
             modal.classList.add("vis");
-            modal.querySelector(".modal-navn").textContent = retten.navn;
+            modal.querySelector(".modal-navn").textContent = retten.Titel;
             modal.querySelector(".modal-billede").src = "billeder/" + retten.billede + ".jpg / .png";
-            modal.querySelector(".modal-navn").alt = "Photo af" + retten.navn;
-            modal.querySelector(".langBeskrivelse").textContent = retten.langbeskrivelse;
-            modal.querySelector(".oprindelsesregion").textContent = retten.oprindelsesregion;
+            modal.querySelector(".modal-navn").alt = "Photo af" + retten.Titel;
+            modal.querySelector(".langBeskrivelse").textContent = retten.Beskrivelse;
             modal.querySelector("button").addEventListener("click", skjulmodal);
 
         }
