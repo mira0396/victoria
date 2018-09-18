@@ -2,84 +2,84 @@
   {
     "Kategori": "forretter",
     "Titel": "Okra",
-    "Pris": "50ZMK",
+    "Pris": "50",
     "Beskrivelse": "Okra blandet med tomat",
     "Billede": "delele"
   },
   {
     "Kategori": "forretter",
     "Titel": "Kapenta & Kål",
-    "Pris": "75ZMK",
+    "Pris": "75",
     "Beskrivelse": "Små fisk med kål",
     "Billede": "dish3"
   },
   {
     "Kategori": "forretter",
     "Titel": "Græskarblade",
-    "Pris": "40ZMK",
+    "Pris": "40",
     "Beskrivelse": "Græskarblade most med nødder",
     "Billede": "chibwawa"
   },
   {
     "Kategori": "hovedretter",
     "Titel": "Nshima med græskarblade",
-    "Pris": "150ZMK",
+    "Pris": "150",
     "Beskrivelse": "Nshima med græskarblade og nødder - vegansk",
     "Billede": "vegan"
   },
   {
     "Kategori": "hovedretter",
     "Titel": "Nshima med oksekød",
-    "Pris": "200ZMK",
+    "Pris": "200",
     "Beskrivelse": "Nshima med oksekød og spinat",
     "Billede": "nshimaspinachmeat"
   },
   {
     "Kategori": "hovedretter",
     "Titel": "Nshima med kål og kapenta",
-    "Pris": "175ZMK",
+    "Pris": "175",
     "Beskrivelse": "Nshima med grønkål og små fisk",
     "Billede": "nshimakapentarape"
   },
   {
     "Kategori": "dessert",
     "Titel": "Tumbua",
-    "Pris": "50ZMK",
+    "Pris": "50",
     "Beskrivelse": "Zambiansk svar på en donut",
     "Billede": "tumbua"
   },
   {
     "Kategori": "dessert",
     "Titel": "Custard",
-    "Pris": "70ZMK",
+    "Pris": "70",
     "Beskrivelse": "Budding med vanilje smag",
     "Billede": "custard"
   },
   {
     "Kategori": "dessert",
     "Titel": "Iskulger",
-    "Pris": "50ZMK",
+    "Pris": "50",
     "Beskrivelse": "Valgfri kugleis",
     "Billede": "ice"
   },
   {
     "Kategori": "drikkevare",
     "Titel": "Cola",
-    "Pris": "25ZMK",
+    "Pris": "25",
     "Beskrivelse": "Coca cola",
     "Billede": "cola"
   },
   {
     "Kategori": "drikkevare",
     "Titel": "Fanta",
-    "Pris": "25ZMK",
+    "Pris": "25",
     "Beskrivelse": "Fanta",
     "Billede": "fanta"
   },
   {
     "Kategori": "drikkevare",
     "Titel": "Sprite",
-    "Pris": "25ZMK",
+    "Pris": "25",
     "Beskrivelse": "Sprite",
     "Billede": "sprite"
   }
