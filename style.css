@@ -19,6 +19,7 @@ a:link {
     font-size: 3vw;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
+    text-decoration-line: none;
 }
 
 a:visited {
@@ -78,15 +79,22 @@ a:active {
     border-radius: 50%;
 
 }
-
-#ret {
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    height: 200px;
-    padding: 70px;
+#ret img {
+    width: 250px;
+    height: 250px;
+    padding: 15%;
     justify-content: center;
-    border-radius: 50%;
+border-radius: 70%;
+
+}
+
+
+.retContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -124,4 +132,30 @@ button {
     cursor: pointer;
     font-family: 'Josefin Sans', sans-serif;
     border-radius: 50px;
+}
+
+@media screen and (max-width: 1229px) {
+    .retContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .ret img {
+        width: 100%
+    }
+
+    .retContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .ret img {
+        width: 100%
+    }
+
+    .retContainer {
+        grid-template-columns: 1fr;
+    }
 }
