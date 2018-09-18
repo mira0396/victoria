@@ -44,19 +44,23 @@ a:active {
     display: flex;
     flex-wrap: wrap;
     padding: 50px;
+    margin: auto;
     justify-content: center;
-}
-
-.logo img {
     height: 450px;
     width: 600px;
-
 }
 
-.logo1 img {
+#splash1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: auto;
+    justify-content: center;
     height: 350px;
     width: 500px;
 }
+
+
 
 #retter {
     display: flex;
@@ -142,7 +146,7 @@ h3 {
 
 
 .menusorter {
-/*
+    /*
     display: flex;
     flex-wrap: wrap;
 */
